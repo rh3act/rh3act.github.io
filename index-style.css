@@ -1,0 +1,174 @@
+@charset "utf-8";
+
+html, body{
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	width: 100%;
+}
+
+.main {
+	height: inherit;
+	width: inherit;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+	grid-template-rows: 2fr 2fr 1fr;
+	grid-template-areas: 
+		"boat boat content content content content"
+		"boat boat header header header header"
+		"boat boat footer footer footer footer";
+
+}
+
+.boat{
+	grid-area: boat;
+	background-image: url(index_img/viribus_unitis-100.jpg);
+}
+
+.content{
+	grid-area: content;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+}
+
+.art{
+	background-image: url(index_img/artworks-100.jpg);
+	height: 200px;
+	width: 200px;
+	background-repeat: no-repeat;
+	margin-top: 20px;
+	margin-left: 80px;
+	justify-self: start;
+}
+
+.type{
+	background-image: url(index_img/typography-100.jpg);
+	height: 200px;
+	width: 200px;
+	background-repeat: no-repeat;
+	margin-top: 20px;
+	margin-left: 60px;
+	justify-self: center;
+}
+
+.design{
+	background-image: url(index_img/design-100.jpg);
+	height: 200px;
+	width: 200px;
+	background-repeat: no-repeat;
+	margin-top: 20px;
+	margin-left: 60px;
+	justify-self: end;
+}
+
+.header{
+	font-family: lora;
+	font-size: 50px;
+	line-height: 50px;
+	text-align: center;
+	color: #004e52;	
+	grid-area: header;
+}
+
+.footer{
+	grid-area: footer;
+	background-image: url(index_img/about_birds-100.jpg);
+	background-size: cover;
+}
+
+
+@media (max-width: 1150px){
+
+	.main{
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+		grid-template-rows: 1fr 1fr 1fr 1fr;
+		grid-template-areas: 
+			"boat boat content content"
+			"boat boat content content"
+			"boat boat header header"
+			"footer footer footer footer";
+	}
+
+	.content{
+		height: inherit;
+		overflow-y: scroll;
+		grid-area: content;
+		display: grid;
+		grid-template-rows: 1fr 1fr 1fr;
+		grid-template-columns: auto;
+		justify-content: center;
+	}
+
+	.art{
+		height: 170px;
+		width: 170px;
+		align-self: center;
+		grid-row-start: 1;
+		grid-row-end: 2;
+		background-size: contain;
+		margin-left: 40px;
+	}
+
+	.type{
+		height: 150px;
+		width: 150px;
+		align-self: center;
+		grid-row-start: 2;
+		grid-row-end: 3;
+		background-size: contain;
+		margin-top: -10px;
+
+	}
+
+	.design{
+		height: 150px;
+		width: 150px;
+		align-self: center;
+		grid-row-start: 3;
+		grid-row-end: 4;
+		background-size: contain;
+
+	}
+
+	.header{
+		font-size: 24px;
+		line-height: 42px;
+		text-align: center;
+		align-self: center;
+	}
+
+}
+
+@media (max-width: 765px){
+
+	.main{
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+		grid-template-rows: 1fr 1fr 1fr 1fr;
+		grid-template-areas: 
+			"boat boat boat boat"
+			"boat boat boat boat"
+			"content content header header"
+			"footer footer footer footer";
+	}
+
+	.content{
+		justify-content: start;
+	}
+
+	.header{
+		font-size: 18px;
+		line-height: 36px;
+	}
+
+	.art{
+		margin-left: 0px;
+	}
+
+	.design{
+		margin-left: 25px;
+	}
+
+	.type{
+		margin-left: 25px;
+	}
+}
